@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:
+  argocd/app-name: chatbot1-may7-3
+  janus-idp.io/tekton: chatbot1-may7-3
+  backstage.io/kubernetes-id: chatbot1-may7-3
+  backstage.io/kubernetes-namespace: chatbot1-may7-3
+  app.kubernetes.io/part-of: chatbot1-may7-3
+resources:
+  - initialize-namespace/
+  - deployment.yaml
+  - route.yaml
+  - service.yaml
+  - model-config.yaml
+  - rhoai/
